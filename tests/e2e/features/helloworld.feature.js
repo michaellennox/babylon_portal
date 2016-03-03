@@ -1,7 +1,9 @@
+var homepage = require('../pages/home.page.js')
+
 describe('Hello Babylon', function() {
   it('displays Hello Babylon on the landing', function() {
-    browser.get('http://localhost:8080');
-    var greeting = element(by.css('h1'))
-    expect(greeting.getText()).toEqual('Hello Babylon')
+    homepage.get()
+    expect(homepage.getGreeting()).toEqual('Hello Babylon')
+    expect(browser.getCurrentUrl()).toEqual(homepage.url)
   })
 })
