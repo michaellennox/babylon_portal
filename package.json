@@ -7,10 +7,12 @@
     "start-test": "NODE_ENV=test node server.js",
     "start-dev": "NODE_ENV=development nodemon --debug server.js",
     "test": "npm run api-tests && npm run karma && npm run protractor",
-    "karma": "karma ",
-    "protractor": "protractor ",
+    "karma": "karma start tests/karma/karma.conf.js",
+    "protractor": "protractor tests/e2e/conf.js",
     "api-tests": "mocha ",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "wd-manager-start": "./node_modules/protractor/bin/webdriver-manager start",
+    "wd-manager-update": "./node_modules/protractor/bin/webdriver-manager update --standalone --chrome"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,6 @@
     "karma-jasmine": "^0.3.7",
     "karma-spec-reporter": "0.0.24",
     "nodemon": "^1.9.1",
-    "protractor": "^3.1.1",
-    "webdriver-manager": "^8.0.0"
+    "protractor": "^3.1.1"
   }
 }
