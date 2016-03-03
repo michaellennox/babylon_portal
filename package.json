@@ -1,0 +1,29 @@
+{
+  "name": "babylon_portal",
+  "version": "0.0.0",
+  "description": "a basic implementation of a booking portal for medical consultations",
+  "scripts": {
+    "start": "NODE_ENV=development node server.js",
+    "start-test": "NODE_ENV=test node server.js",
+    "start-dev": "NODE_ENV=development nodemon --debug server.js",
+    "test": "npm run api-tests && npm run karma && npm run protractor",
+    "karma": "karma ",
+    "protractor": "protractor ",
+    "api-tests": "mocha ",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaellennox/babylon_portal.git"
+  },
+  "author": "michaellennox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaellennox/babylon_portal/issues"
+  },
+  "homepage": "https://github.com/michaellennox/babylon_portal#readme",
+  "dependencies": {
+    "bower": "^1.7.7",
+    "express": "^4.13.4"
+  }
+}
