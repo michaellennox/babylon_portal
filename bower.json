@@ -1,7 +1,6 @@
 {
   "name": "babylon_portal",
   "description": "a basic implementation of a booking portal for medical consultations",
-  "main": "",
   "authors": [
     "michaellennox"
   ],
@@ -14,5 +13,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-mocks": "^1.5.0"
+  }
 }
