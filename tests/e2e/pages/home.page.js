@@ -1,14 +1,14 @@
 var homepage = {
   url: 'http://localhost:8080/',
-  greeting: element(by.className('md-display-1')),
+  heading: element(by.className('md-display-1')),
   bookingButton: element(by.uiSref('book')),
 
   get: function() {
     browser.get(this.url);
   },
 
-  getGreeting: function() {
-    return this.greeting.getText();
+  getHeading: function() {
+    return this.heading.getText();
   },
 
   isBookingButtonDisplayed: function() {
