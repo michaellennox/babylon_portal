@@ -1,6 +1,6 @@
 babylonPortal.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
-  var templateBase = '../views/partials/'
+  var templateBase = '../views/partials/';
   $stateProvider
     .state('home', {
       url: '/',
@@ -9,5 +9,5 @@ babylonPortal.config(function($stateProvider, $urlRouterProvider) {
     .state('book', {
       url: '/bookaconsultation',
       templateUrl: templateBase + 'book.html'
-    })
+    });
 });

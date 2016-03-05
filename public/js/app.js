@@ -1,1 +1,1 @@
-var babylonPortal = angular.module('babylonPortal', ['ui.router']);
+var babylonPortal = angular.module('babylonPortal', ['ngMaterial', 'ui.router']);

@@ -1,0 +1,17 @@
+body {
+  background-color: #f7f7f7;
+}
+
+.card-header {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.card-image {
+  max-height: 300px;
+}
+
+md-card-actions {
+  padding: 12px;
+}
