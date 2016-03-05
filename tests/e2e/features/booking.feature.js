@@ -6,9 +6,10 @@ describe('Booking a consultation \n', function() {
       homepage.get();
     });
 
-    it('Then user should be greeted with a welcome message \n\
+    it('Then the user should be greeted with a welcome message \n\
         and be prompted to book a consultation', function() {
           expect(homepage.getGreeting()).toEqual('Welcome, How Can We Help You?');
+          expect(homepage.isBookingButtonDisplayed()).toBeTruthy();
     });
   });
 });
