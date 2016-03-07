@@ -17,6 +17,10 @@ module.exports = function(config) {
     files: [
       'public/libs/angular/angular.js',
       'public/libs/angular-mocks/angular-mocks.js',
+      'public/libs/angular-aria/angular-aria.js',
+      'public/libs/angular-animate/angular-animate.js',
+      'public/libs/angular-material/angular-material.js',
+      'public/libs/angular-ui-router/release/angular-ui-router.js',
       'public/js/**/*.js',
       'tests/karma/**/*.spec.js'
     ],

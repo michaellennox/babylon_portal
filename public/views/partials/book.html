@@ -1,5 +1,5 @@
 <h2 class="md-display-1" flex layout-margin>Book a Consultation</h2>
-<md-card flex>
+<md-card flex ng-controller="BookingFormCtrl as bookingForm">
   <md-card-content>
     <h3 class="md-title">BOOK THIS CONSULTATION FOR</h3>
     <md-list layout="row" layout-align="center center">
@@ -18,12 +18,14 @@
         <span>or</span>
       </md-list-item>
       <md-list-item layout="column" flex="15" layout-align="center center">
-        <img class="list-image" src="https://pbs.twimg.com/profile_images/616542814319415296/McCTpH_E.jpg">
+        <span class="list-image" layout="column" layout-align="center center"></span>
         <span>Add Muffles</span>
       </md-list-item>
     </md-list>
   </md-card-content>
+
   <md-divider></md-divider>
+
   <md-card-content>
 
   </md-card-content>

@@ -32,6 +32,11 @@ md-card-actions {
   margin: 8px 0;
   border-radius: 50%;
   border: 2px solid #e7e7e7;
+  background: #f7f7f7;
+}
+
+.fa {
+  font-size: 24px;
 }
 
 md-card-content .md-title {
