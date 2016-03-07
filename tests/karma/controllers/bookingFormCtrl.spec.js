@@ -3,6 +3,14 @@ describe('BookingFormCtrl', function() {
   var dataResourceFactoryMock;
   var $q;
   var $rootScope;
+  var familyMembersResponse = {
+    data: {
+      familyMembers: [
+        {'name': 'Yourself'},
+        {'name': 'Jessica'}
+      ]
+    }
+  };
 
   beforeEach(function() {
     dataResourceFactoryMock = jasmine.createSpyObj(
@@ -12,25 +20,16 @@ describe('BookingFormCtrl', function() {
     module('babylonPortal', {
       dataResourceFactory: dataResourceFactoryMock
     });
-    inject(function($controller, _$q_, _$rootScope_) {
+    inject(function($controller, $q, _$rootScope_) {
+      dataResourceFactoryMock.getFamilyMembers
+        .and.returnValue($q.when(familyMembersResponse));
       ctrl = $controller('BookingFormCtrl');
-      $q = _$q_;
       $rootScope = _$rootScope_;
     });
   });
 
   it('initializes with family members from the dataResourceFactory', function() {
-    var response = {
-      data: {
-        familyMembers: [
-          {'name': 'Yourself'},
-          {'name': 'Jessica'}
-        ]
-      }
-    };
-    dataResourceFactoryMock.getFamilyMembers
-      .and.returnValue($q.when(response));
     $rootScope.$digest();
-    expect(ctrl.familyMembers).toEqual(response.data.familyMembers);
+    expect(ctrl.familyMembers).toEqual(familyMembersResponse.data.familyMembers);
   });
 });
