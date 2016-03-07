@@ -1,7 +1,6 @@
 describe('BookingFormCtrl', function() {
   var ctrl;
   var dataResourceFactoryMock;
-  var $q;
   var $rootScope;
   var familyMembersResponse = {
     data: {

@@ -15,7 +15,7 @@ describe('dataResourceFactory', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  describe('#getFamilyMembers', function() {
+  describe('#getFamilyMembers()', function() {
     it('returns the data from the families endpoint', function() {
       var fakedFamily = {'familyMemers': 'many members'}
       $httpBackend.expectGET('/public/mocked_data/faked_family.json').respond(fakedFamily);
