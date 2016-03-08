@@ -22,7 +22,7 @@ describe('BookingFormCtrl', function() {
   beforeEach(function() {
     dataResourceFactoryMock = jasmine.createSpyObj(
       'dataResourceFactoryMock',
-      ['getFamilyMembers']
+      ['getFamilyMembers', 'getAvailableServices']
     );
     module('babylonPortal', {
       dataResourceFactory: dataResourceFactoryMock
@@ -30,7 +30,7 @@ describe('BookingFormCtrl', function() {
     inject(function($controller, $q, _$rootScope_) {
       dataResourceFactoryMock.getFamilyMembers
         .and.returnValue($q.when(familyMembersResponse));
-      dataResourceFactoryMock.getFamilyMembers
+      dataResourceFactoryMock.getAvailableServices
         .and.returnValue($q.when(availableServicesResponse));
       ctrl = $controller('BookingFormCtrl');
       $rootScope = _$rootScope_;
@@ -53,7 +53,7 @@ describe('BookingFormCtrl', function() {
   });
 
   it('initializes with the first service set as active', function() {
-    $rootscope.$digest();
+    $rootScope.$digest();
     expect(ctrl.activeService).toEqual(0);
   });
 

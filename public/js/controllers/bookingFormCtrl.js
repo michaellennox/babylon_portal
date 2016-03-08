@@ -11,5 +11,10 @@ babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', function(dat
         self.familyMembers = response.data.familyMembers;
         self.activeMember = 0;
       });
+    dataResourceFactory.getAvailableServices(1)
+      .then(function(response) {
+        self.availableServices = response.data.availableServices;
+        self.activeService = 0;
+      });
   }).call();
 }]);
