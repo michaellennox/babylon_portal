@@ -32,5 +32,12 @@ describe('Booking a Consultation', function() {
       bookpage.clickFamilyMember('Sarah');
       expect(bookpage.getActiveFamilyMember()).toEqual('Sarah');
     });
+
+    it('The user should be able to select the service the require', function() {
+      expect(bookpage.getNumberOfServices()).toEqual(4);
+      expect(bookpage.getActiveService()).toEqual('GP');
+      bookpage.clickService('Specialist');
+      expect(bookpage.getActiveService()).toEqual('Specialist');
+    });
   });
 });

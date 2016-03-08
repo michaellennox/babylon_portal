@@ -6,6 +6,11 @@ var bookpage = {
       return index % 2 === 0;
     }),
   activeMember: element(by.className('activemember')),
+  services: element.all(by.repeater('service in bookingForm.availableServices'))
+    .filter(function(elem, index) {
+      return index % 2 === 0;
+    }),
+  activeService: element(by.className('activeservice')),
 
   getHeading: function() {
     return this.heading.getText();
@@ -21,6 +26,22 @@ var bookpage = {
 
   clickFamilyMember: function(name) {
     this.familyMembers.filter(function(elem, index) {
+      return elem.getText().then(function(text) {
+        return text === name;
+      });
+    }).first().click();
+  },
+
+  getNumberOfServices: function() {
+    return this.services.count();
+  },
+
+  getActiveService: function() {
+    return this.activeService.getText();
+  },
+
+  clickService: function(name) {
+    this.services.filter(function(elem, index) {
       return elem.getText().then(function(text) {
         return text === name;
       });
