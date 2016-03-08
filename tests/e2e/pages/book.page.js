@@ -1,7 +1,11 @@
 var bookpage = {
   url: 'http://localhost:8080/bookaconsultation',
   heading: element(by.className('md-display-1')),
-  familyMembers: element.all(by.repeater('member in bookingCtrl.familyMembers')),
+  familyMembers: element.all(by.repeater('familyMember in bookingForm.familyMembers'))
+    .filter(function(elem, index) {
+      return index % 2 === 0;
+    }),
+  activeMember: element.all(by.className('activemember')).first(),
 
   getHeading: function() {
     return this.heading.getText();
@@ -11,19 +15,12 @@ var bookpage = {
     return this.familyMembers.count();
   },
 
-  getSelectedFamilyMember: function() {
-    var memberAvatars = this.familyMembers.column('member.avatar');
-    var memberNames = this.familyMembers.column('member.name');
-    memberAvatars.filter(function(elem, index) {
-      if (elem.getAttribute('class').includes('active')) {
-        return memberNames(index).getText();
-      }
-    });
+  getActiveFamilyMember: function() {
+    return this.activeMember.getText();
   },
 
   clickFamilyMember: function(name) {
-    var memberNames = this.familyMembers.column('member.name');
-    memberAvatars.filter(function(elem, index) {
+    this.familyMembers.filter(function(elem, index) {
       return elem.getText().then(function(text) {
         return text === name;
       });

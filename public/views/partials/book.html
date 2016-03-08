@@ -3,7 +3,9 @@
   <md-card-content>
     <h3 class="md-title">BOOK THIS CONSULTATION FOR</h3>
     <md-list layout="row" layout-align="center center">
-      <md-list-item layout="column" flex="15" layout-align="center center" ng-repeat-start="familyMember in bookingForm.familyMembers">
+      <md-list-item layout="column" flex="15" layout-align="center center"
+                    ng-repeat-start="familyMember in bookingForm.familyMembers"
+                    ng-class="{activemember: $index === bookingForm.activeMember}">
         <img class="list-image" ng-src="{{familyMember.avatar}}">
         <span>{{familyMember.name}}</span>
       </md-list-item>
@@ -12,7 +14,7 @@
       </md-list-item>
       <md-list-item layout="column" flex="15" layout-align="center center">
         <span class="list-image" layout="column" layout-align="center center"></span>
-        <span>Add Muffles</span>
+        <span>Someone Else</span>
       </md-list-item>
     </md-list>
   </md-card-content>

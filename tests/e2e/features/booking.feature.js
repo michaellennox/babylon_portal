@@ -28,9 +28,9 @@ describe('Booking a Consultation', function() {
 
     it('The user should be able to select the family member who needs a consultation', function() {
       expect(bookpage.getNumberOfFamilyMembers()).toEqual(2);
-      expect(bookpage.getSelectedFamilyMember()).toEqual('Yourself');
+      expect(bookpage.getActiveFamilyMember()).toEqual('Yourself');
       bookpage.clickFamilyMember('Sarah');
-      expect(bookpage.getSelectedFamilyMember()).toEqual('Sarah');
+      expect(bookpage.getActiveFamilyMember()).toEqual('Sarah');
     });
   });
 });
