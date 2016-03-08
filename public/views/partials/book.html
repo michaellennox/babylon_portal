@@ -3,18 +3,11 @@
   <md-card-content>
     <h3 class="md-title">BOOK THIS CONSULTATION FOR</h3>
     <md-list layout="row" layout-align="center center">
-      <md-list-item layout="column" flex="15" layout-align="center center">
-        <img class="list-image" src="https://pbs.twimg.com/profile_images/616542814319415296/McCTpH_E.jpg">
-        <span>Yourself</span>
+      <md-list-item layout="column" flex="15" layout-align="center center" ng-repeat-start="familyMember in bookingForm.familyMembers">
+        <img class="list-image" ng-src="{{familyMember.avatar}}">
+        <span>{{familyMember.name}}</span>
       </md-list-item>
-      <md-list-item layout="column" flex="5" layout-align="center center">
-        <span>or</span>
-      </md-list-item>
-      <md-list-item layout="column" flex="15" layout-align="center center">
-        <img class="list-image" src="https://pbs.twimg.com/profile_images/616542814319415296/McCTpH_E.jpg">
-        <span>Jackie</span>
-      </md-list-item>
-      <md-list-item layout="column" flex="5" layout-align="center center">
+      <md-list-item layout="column" flex="5" layout-align="center center" ng-repeat-end>
         <span>or</span>
       </md-list-item>
       <md-list-item layout="column" flex="15" layout-align="center center">

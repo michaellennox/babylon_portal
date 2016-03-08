@@ -18,8 +18,8 @@ describe('dataResourceFactory', function() {
   describe('#getFamilyMembers()', function() {
     it('returns the data from the families endpoint', function() {
       var fakedFamily = {'familyMemers': 'many members'}
-      $httpBackend.expectGET('/public/mocked_data/faked_family.json').respond(fakedFamily);
-      factory.getFamilyMembers().then(function(response) {
+      $httpBackend.expectGET('/api/families/1').respond(fakedFamily);
+      factory.getFamilyMembers(1).then(function(response) {
         expect(response.data).toEqual(fakedFamily);
       });
       $httpBackend.flush();

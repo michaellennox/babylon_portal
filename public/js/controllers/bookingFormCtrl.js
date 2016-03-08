@@ -2,7 +2,7 @@ babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', function(dat
   var self = this;
 
   (function init() {
-    dataResourceFactory.getFamilyMembers()
+    dataResourceFactory.getFamilyMembers(1)
       .then(function(response) {
         self.familyMembers = response.data.familyMembers;
         self.activeMember = 0;

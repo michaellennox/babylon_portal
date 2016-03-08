@@ -6,8 +6,13 @@ var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('*', function(req, res) {
+app.get(['/', '/bookaconsultation'], function(req, res) {
   res.sendFile(path.join(__dirname, 'public/views', 'index.html'));
+});
+
+app.get('/api/families/:id', function(req, res) {
+  var faked_family = require('./mocked_data/faked_family');
+  res.json(faked_family);
 });
 
 app.listen(port);
