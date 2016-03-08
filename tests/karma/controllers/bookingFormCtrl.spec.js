@@ -36,4 +36,11 @@ describe('BookingFormCtrl', function() {
     $rootScope.$digest();
     expect(ctrl.activeMember).toEqual(0);
   });
+
+  describe('#setActiveFamilyMember()', function() {
+    it('sets the active family member to number passed', function() {
+      ctrl.setActiveFamilyMember(2);
+      expect(ctrl.activeMember).toEqual(2);
+    });
+  });
 });
