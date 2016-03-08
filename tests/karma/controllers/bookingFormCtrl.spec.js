@@ -31,4 +31,9 @@ describe('BookingFormCtrl', function() {
     $rootScope.$digest();
     expect(ctrl.familyMembers).toEqual(familyMembersResponse.data.familyMembers);
   });
+
+  it('initializes with the first family member as active', function() {
+    $rootScope.$digest();
+    expect(ctrl.activeMember).toEqual(0);
+  });
 });
