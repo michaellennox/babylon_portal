@@ -5,6 +5,7 @@ babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', function(dat
     dataResourceFactory.getFamilyMembers()
       .then(function(response) {
         self.familyMembers = response.data.familyMembers;
+        self.activeMember = 0;
       });
   }).call();
 }]);
