@@ -5,6 +5,10 @@ babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', function(dat
     self.activeMember = index;
   };
 
+  self.setActiveService = function(index) {
+    self.activeService = index;
+  };
+
   (function init() {
     dataResourceFactory.getFamilyMembers(1)
       .then(function(response) {
