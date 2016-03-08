@@ -10,6 +10,14 @@ describe('BookingFormCtrl', function() {
       ]
     }
   };
+  var availableServicesResponse = {
+    data: {
+      availableServices: [
+        {'type': 'GP'},
+        {'type': 'Specialist'}
+      ]
+    }
+  };
 
   beforeEach(function() {
     dataResourceFactoryMock = jasmine.createSpyObj(
@@ -22,6 +30,8 @@ describe('BookingFormCtrl', function() {
     inject(function($controller, $q, _$rootScope_) {
       dataResourceFactoryMock.getFamilyMembers
         .and.returnValue($q.when(familyMembersResponse));
+      dataResourceFactoryMock.getFamilyMembers
+        .and.returnValue($q.when(availableServicesResponse));
       ctrl = $controller('BookingFormCtrl');
       $rootScope = _$rootScope_;
     });
@@ -35,6 +45,16 @@ describe('BookingFormCtrl', function() {
   it('initializes with the first family member as active', function() {
     $rootScope.$digest();
     expect(ctrl.activeMember).toEqual(0);
+  });
+
+  it('initializes with services data from dataResourceFactory', function() {
+    $rootScope.$digest();
+    expect(ctrl.availableServices).toEqual(availableServicesResponse.data.availableServices);
+  });
+
+  it('initializes with the first service set as active', function() {
+    $rootscope.$digest();
+    expect(ctrl.activeService).toEqual(0);
   });
 
   describe('#setActiveFamilyMember()', function() {
