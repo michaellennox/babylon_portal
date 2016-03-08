@@ -25,4 +25,15 @@ describe('dataResourceFactory', function() {
       $httpBackend.flush();
     });
   });
+
+  describe('#getAvailableServices()', function() {
+    it('returns the data from the services endpoint', function() {
+      var fakedServices = {'services': 'many services'}
+      $httpBackend.expectGET('/api/families/1/services').respond(fakedServices);
+      factory.getAvailableServices(1).then(function(response) {
+        expect(response.data).toEqual(fakedServices);
+      });
+      $httpBackend.flush();
+    })
+  });
 });
