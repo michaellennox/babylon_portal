@@ -5,7 +5,7 @@ var bookpage = {
     .filter(function(elem, index) {
       return index % 2 === 0;
     }),
-  activeMember: element.all(by.className('activemember')).first(),
+  activeMember: element(by.className('activemember')),
 
   getHeading: function() {
     return this.heading.getText();

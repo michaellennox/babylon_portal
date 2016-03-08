@@ -5,7 +5,8 @@
     <md-list layout="row" layout-align="center center">
       <md-list-item layout="column" flex="15" layout-align="center center"
                     ng-repeat-start="familyMember in bookingForm.familyMembers"
-                    ng-class="{activemember: $index === bookingForm.activeMember}">
+                    ng-class="{activemember: $index === bookingForm.activeMember}"
+                    ng-click="bookingForm.setActiveFamilyMember($index)">
         <img class="list-image" ng-src="{{familyMember.avatar}}">
         <span>{{familyMember.name}}</span>
       </md-list-item>
