@@ -23,6 +23,16 @@
   <md-divider></md-divider>
 
   <md-card-content>
-
+    <h3 class="md-title">SELECT A HEALTHCARE PROFESSIONAL</h3>
+    <md-list-item layout="column" flex="15" layout-align="center center"
+                  ng-repeat-start="service in bookingForm.availableServices"
+                  ng-class="{activeservice: $index === bookingForm.activeService}"
+                  ng-click="bookingForm.setActiveService($index)">
+      <img class="list-image" ng-src="{{service.icon}}">
+      <span>{{service.type}}</span>
+    </md-list-item>
+    <md-list-item layout="column" flex="5" layout-align="center center" ng-repeat-end ng-show="!$last">
+      <span>or</span>
+    </md-list-item>
   </md-card-content>
 </md-card>
