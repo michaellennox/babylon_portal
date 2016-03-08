@@ -47,6 +47,10 @@ md-card-actions {
   font-size: 24px;
 }
 
+.md-button {
+  text-transform: none !important;
+}
+
 md-card-content .md-title {
   margin: 0;
   text-align: center;
