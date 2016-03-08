@@ -63,4 +63,11 @@ describe('BookingFormCtrl', function() {
       expect(ctrl.activeMember).toEqual(2);
     });
   });
+
+  describe('#setActiveService()', function() {
+    it('sets the active service to number passed', function() {
+      ctrl.setActiveService(4);
+      expect(ctrl.activeService).toEqual(4);
+    });
+  });
 });

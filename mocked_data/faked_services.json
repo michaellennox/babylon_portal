@@ -1,0 +1,20 @@
+{
+  "availableServices": [
+    {
+      "type": "GP",
+      "icon": "https://cdn3.iconfinder.com/data/icons/medical-6-1/512/physician_head_doctor_MD_woman-512.png"
+    },
+    {
+      "type": "Nurse",
+      "icon": "https://cdn3.iconfinder.com/data/icons/healthcare-and-medicine-icons-1/512/Nurse-512.png"
+    },
+    {
+      "type": "Therapist",
+      "icon": "https://cdn2.iconfinder.com/data/icons/medical-specialties-2/256/Mental_Health-512.png"
+    },
+    {
+      "type": "Specialist",
+      "icon": "https://www.governmentjobs.com/Content/Images/CategoryIcons/counseling.png"
+    }
+  ]
+}

@@ -39,6 +39,10 @@ md-card-actions {
   border-color: green;
 }
 
+.activeservice img {
+  border-color: green;
+}
+
 .fa {
   font-size: 24px;
 }

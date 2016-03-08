@@ -11,9 +11,14 @@ app.get(['/', '/bookaconsultation'], function(req, res) {
 });
 
 app.get('/api/families/:id', function(req, res) {
-  var faked_family = require('./mocked_data/faked_family');
-  res.json(faked_family);
+  var fakedFamily = require('./mocked_data/faked_family');
+  res.json(fakedFamily);
 });
+
+app.get('/api/families/:id/services', function(req, res) {
+  var fakedServices = require('./mocked_data/faked_services');
+  res.json(fakedServices);
+})
 
 app.listen(port);
 
