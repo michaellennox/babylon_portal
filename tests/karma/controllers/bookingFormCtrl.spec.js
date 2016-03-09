@@ -2,22 +2,6 @@ describe('BookingFormCtrl', function() {
   var ctrl;
   var dataResourceFactoryMock;
   var $rootScope;
-  var familyMembersResponse = {
-    data: {
-      familyMembers: [
-        {'name': 'Yourself'},
-        {'name': 'Jessica'}
-      ]
-    }
-  };
-  var availableServicesResponse = {
-    data: {
-      availableServices: [
-        {'type': 'GP'},
-        {'type': 'Specialist'}
-      ]
-    }
-  };
 
   beforeEach(function() {
     dataResourceFactoryMock = jasmine.createSpyObj(
@@ -57,6 +41,11 @@ describe('BookingFormCtrl', function() {
     expect(ctrl.activeService).toEqual(0);
   });
 
+  it('initializes with the first medic from service set as active', function() {
+    $rootScope.$digest();
+    expect(ctrl.activeMedic.name).toEqual('A. GP');
+  });
+
   describe('#setActiveFamilyMember()', function() {
     it('sets the active family member to number passed', function() {
       ctrl.setActiveFamilyMember(2);
@@ -69,5 +58,55 @@ describe('BookingFormCtrl', function() {
       ctrl.setActiveService(4);
       expect(ctrl.activeService).toEqual(4);
     });
+
+    it('sets the active medic relevant to service', function() {
+      ctrl.setActiveService(4);
+      expect(ctrl.activeMedic.name).toEqual('A. Specialist');
+    });
   });
+
+  var familyMembersResponse = {
+    data: {
+      familyMembers: [
+        {'name': 'Yourself'},
+        {'name': 'Jessica'}
+      ]
+    }
+  };
+  var availableServicesResponse = {
+    data: {
+      availableServices: [
+        {
+          'type': 'GP',
+          "medics": [
+            {
+              "name": "A. GP",
+              "appointments": [
+                { "time": "1458308800" },
+                { "time": "1458308900" }
+              ]
+            },
+            {
+              "name": "A. N. GP",
+              "appointments": [
+                { "time": "1458308800" },
+              ]
+            }
+          ]
+        },
+        {
+          'type': 'Specialist',
+          "medics": [
+            {
+              "name": "A. Specialist",
+              "appointments": [
+                { "time": "1458308800" },
+                { "time": "1458308900" }
+              ]
+            },
+          ]
+        }
+      ]
+    }
+  };
 });
