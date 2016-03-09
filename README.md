@@ -23,6 +23,7 @@ If I had more time I would try to implement the following
 * Replace the select inputs with modals, likely will require a custom directive unless I implement one from another library
 * Spend more time styling the application, aim to make use of the angular material themeProvider which looks quite powerful
 * Make the final two protractor tests function, this might be a bit easier once modals are implemented
+* Implement CI with Travis
 
 ## Installation Instructions
 
