@@ -11,7 +11,14 @@ babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', '$filter', f
   };
 
   self._setActiveMedicFromService = function() {
-    self.activeMedic = self.availableServices[self.activeService].medics[0];
+    self.medics = self.availableServices[self.activeService].medics;
+    self.activeMedic = self.medics[0];
+    self._setActiveAppointmentFromMedic();
+  };
+
+  self._setActiveAppointmentFromMedic = function() {
+    self.appointments = self.activeMedic.appointments;
+    self.activeAppointment = self.appointments[0];
   };
 
   dataResourceFactory.getFamilyMembers(1)

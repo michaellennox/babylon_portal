@@ -7,21 +7,21 @@
         {
           "name": "Dr Paul Devis",
           "appointments": [
-            { "time": "1458039600" },
-            { "time": "1458057600" }
+            { "time": "1458039600000" },
+            { "time": "1458057600000" }
           ]
         },
         {
           "name": "Dr Steve Hurel",
           "appointments": [
-            { "time": "1458230400" },
-            { "time": "1458237600" }
+            { "time": "1458230400000" },
+            { "time": "1458237600000" }
           ]
         },
         {
           "name": "Dr Partha Kar",
           "appointments": [
-            { "time": "1458208800" },
+            { "time": "1458208800000" }
           ]
         }
       ]
@@ -33,7 +33,7 @@
         {
           "name": "A. Nurse",
           "appointments": [
-            { "time": "1458308800" },
+            { "time": "1458308800000" }
           ]
         }
       ]
@@ -45,7 +45,7 @@
         {
           "name": "Dr Therapist Person",
           "appointments": [
-            { "time": "1458208900" },
+            { "time": "1458208900000" }
           ]
         }
       ]
@@ -57,7 +57,7 @@
         {
           "name": "Dr Special Doctor",
           "appointments": [
-            { "time": "1458208800" },
+            { "time": "1458208800000" }
           ]
         }
       ]

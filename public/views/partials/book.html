@@ -43,9 +43,8 @@
   <md-card-content>
     <h3 class="md-title">SELECT THE DOCTOR</h3>
     <div md-input-container flex="30" class="input-selector">
-      <label>{{bookingForm.activeMedic}}</label>
-      <md-select ng-model="bookingForm.activeMedic" id="medicSelector">
-        <md-option ng-repeat="medic in bookingForm.medics" value="{{medic.name}}">
+      <md-select ng-model="bookingForm.activeMedic" id="medicSelector" placeholder="{{bookingForm.activeMedic.name}}">
+        <md-option ng-repeat="medic in bookingForm.medics" value="{{medic}}">
           {{medic.name}}
         </md-option>
       </md-select>
@@ -53,4 +52,16 @@
   </md-card-content>
 
   <md-divider></md-divider>
+
+  <md-card-content>
+    <h3 class="md-title">NEXT AVAILABLE APPOINTMENT</h3>
+    <div md-input-container flex="30" class="input-selector">
+      <md-select ng-model="bookingForm.activeAppointment" id="appointmentSelector"
+                 placeholder="{{bookingForm.activeAppointment.time | date:'MMM d \'at\' h:mma'}}">
+        <md-option ng-repeat="appointment in bookingForm.appointments" value="{{appointment}}">
+          {{appointment.time | date:'MMM d \'at\' h:mma'}}
+        </md-option>
+      </md-select>
+    </div>
+  </md-card-content>
 </md-card>

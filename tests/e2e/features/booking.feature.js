@@ -46,5 +46,12 @@ describe('Booking a Consultation', function() {
       bookpage.selectMedic('Dr Steve Hurel');
       expect(bookpage.getSelectedMedic()).toEqual('Dr Steve Hurel');
     });
+
+    it('The user should be able to select their appointment', function() {
+      expect(bookpage.getSelectedAppointment()).toEqual('Mar 15 at 11:00AM');
+      bookpage.clickAppointmentSelection();
+      bookpage.selectAppointment('Mar 15 at 4:00PM');
+      expect(bookpage.getSelectedAppointment()).toEqual('Mar 15 at 4:00PM');
+    });
   });
 });

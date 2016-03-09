@@ -46,6 +46,11 @@ describe('BookingFormCtrl', function() {
     expect(ctrl.activeMedic.name).toEqual('A. GP');
   });
 
+  it('initializes with the first time from medic set as active', function() {
+    $rootScope.$digest();
+    expect(ctrl.activeAppointment.time).toEqual('1458308800000');
+  });
+
   describe('#setActiveFamilyMember()', function() {
     it('sets the active family member to number passed', function() {
       ctrl.setActiveFamilyMember(2);
@@ -64,6 +69,12 @@ describe('BookingFormCtrl', function() {
       $rootScope.$digest();
       ctrl.setActiveService(1);
       expect(ctrl.activeMedic.name).toEqual('A. Specialist');
+    });
+
+    it('sets the active appointment relevant to medic', function() {
+      $rootScope.$digest();
+      ctrl.setActiveService(1);
+      expect(ctrl.activeAppointment.time).toEqual('1458308800000');
     });
   });
 
@@ -84,14 +95,14 @@ describe('BookingFormCtrl', function() {
             {
               "name": "A. GP",
               "appointments": [
-                { "time": "1458308800" },
-                { "time": "1458308900" }
+                { "time": "1458308800000" },
+                { "time": "1458308900000" }
               ]
             },
             {
               "name": "A. N. GP",
               "appointments": [
-                { "time": "1458308800" },
+                { "time": "1458308800000" },
               ]
             }
           ]
@@ -102,8 +113,8 @@ describe('BookingFormCtrl', function() {
             {
               "name": "A. Specialist",
               "appointments": [
-                { "time": "1458308800" },
-                { "time": "1458308900" }
+                { "time": "1458308800000" },
+                { "time": "1458308900000" }
               ]
             },
           ]

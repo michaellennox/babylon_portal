@@ -11,7 +11,7 @@ var bookpage = {
       return index % 2 === 0;
     }),
   activeService: element(by.className('activeservice')),
-  medicSelector: element(by.id('medicSelector')),
+  medicSelector: element(by.className('md-select-value')),
   medicList: element.all(by.repeater('medic in bookingForm.medics')),
 
   getHeading: function() {
