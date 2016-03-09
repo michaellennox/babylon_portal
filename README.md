@@ -8,7 +8,7 @@ I have followed a test driven methodology to complete the application as is. I w
 
 I have aimed to commit every time I wrote a new failing test or passed a previous one to demonstrate the workflow. [commits](https://github.com/michaellennox/babylon_portal/commits/master)
 
-The application has been built with [Angular Material](https://material.angularjs.org/latest/) and this is the first time I have made use of that library. There are a few sections where I have struggled to implement the features I wanted to, these are detailed further below.
+The application has been built with [Angular Material](https://material.angularjs.org/latest/) and this is the first time I have made use of that library. I have made use of NodeJS and ExpressJS for the small server and the logic on the front end has been built with AngularJS. There are a few sections where I have struggled to implement the features I wanted to, these are detailed further below.
 
 ## Struggles
 
