@@ -53,5 +53,10 @@ describe('Booking a Consultation', function() {
       bookpage.selectAppointment('Mar 15 at 4:00PM');
       expect(bookpage.getSelectedAppointment()).toEqual('Mar 15 at 4:00PM');
     });
+
+    it('After submitting their appointment, the user should be routed back to home', function() {
+      bookpage.submitBooking();
+      expect(browser.getCurrentUrl()).toEqual(homepage.url);
+    });
   });
 });
