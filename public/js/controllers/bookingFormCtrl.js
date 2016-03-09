@@ -1,4 +1,4 @@
-babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', '$filter', function(dataResourceFactory, $filter) {
+babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', '$location', function(dataResourceFactory, $location) {
   var self = this;
 
   self.setActiveFamilyMember = function(index) {
@@ -8,6 +8,17 @@ babylonPortal.controller('BookingFormCtrl', ['dataResourceFactory', '$filter', f
   self.setActiveService = function(index) {
     self.activeService = index;
     self._setActiveMedicFromService();
+  };
+
+  self.completeBooking = function() {
+    dataResourceFactory.postBookings(
+      self.familyMembers[self.activeMember],
+      self.availableServices[self.activeService],
+      self.activeMedic,
+      self.activeAppointment
+    ).then(function() {
+      $location.path('/');
+    });
   };
 
   self._setActiveMedicFromService = function() {

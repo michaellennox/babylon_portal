@@ -6,16 +6,20 @@ describe('BookingFormCtrl', function() {
   beforeEach(function() {
     dataResourceFactoryMock = jasmine.createSpyObj(
       'dataResourceFactoryMock',
-      ['getFamilyMembers', 'getAvailableServices']
+      ['getFamilyMembers', 'getAvailableServices', 'postBookings']
     );
+    locationMock = jasmine.createSpy('locationMock');
     module('babylonPortal', {
-      dataResourceFactory: dataResourceFactoryMock
+      dataResourceFactory: dataResourceFactoryMock,
+      $location: locationMock
     });
     inject(function($controller, $q, _$rootScope_) {
       dataResourceFactoryMock.getFamilyMembers
         .and.returnValue($q.when(familyMembersResponse));
       dataResourceFactoryMock.getAvailableServices
         .and.returnValue($q.when(availableServicesResponse));
+      dataResourceFactoryMock.postBookings
+        .and.returnValue($q.when());
       ctrl = $controller('BookingFormCtrl');
       $rootScope = _$rootScope_;
     });
@@ -75,6 +79,20 @@ describe('BookingFormCtrl', function() {
       $rootScope.$digest();
       ctrl.setActiveService(1);
       expect(ctrl.activeAppointment.time).toEqual('1458308800000');
+    });
+  });
+
+  describe('#completeBooking()', function() {
+    it('calls postBookings on the dataResourceFactory passing the information from form', function() {
+      var service = availableServicesResponse.data.availableServices;
+      $rootScope.$digest();
+      ctrl.completeBooking();
+      expect(dataResourceFactoryMock.postBookings).toHaveBeenCalledWith(
+        {'name': 'Yourself'},
+        service[0],
+        service[0].medics[0],
+        service[0].medics[0].appointments[0]
+      );
     });
   });
 

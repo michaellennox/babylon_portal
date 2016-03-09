@@ -67,3 +67,7 @@ md-card {
 md-card-actions {
   margin-bottom: 16px !important;
 }
+
+.nav-active {
+  border-bottom: 1px solid #fff;
+}
