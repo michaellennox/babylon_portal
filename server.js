@@ -18,7 +18,11 @@ app.get('/api/families/:id', function(req, res) {
 app.get('/api/families/:id/services', function(req, res) {
   var fakedServices = require('./mocked_data/faked_services');
   res.json(fakedServices);
-})
+});
+
+app.post('/api/bookings', function(req, res) {
+  res.send(200);
+});
 
 app.listen(port);
 
