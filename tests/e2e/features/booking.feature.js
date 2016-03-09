@@ -39,5 +39,12 @@ describe('Booking a Consultation', function() {
       bookpage.clickService('Specialist');
       expect(bookpage.getActiveService()).toEqual('Specialist');
     });
+
+    it('The user should be able to select their doctor', function() {
+      expect(bookpage.getSelectedMedic()).toEqual('Dr Paul Devis');
+      bookpage.clickMedicSelection();
+      bookpage.selectMedic('Dr Steve Hurel');
+      expect(bookpage.getSelectedMedic()).toEqual('Dr Steve Hurel');
+    });
   });
 });

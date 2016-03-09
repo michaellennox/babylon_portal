@@ -55,3 +55,7 @@ md-card-content .md-title {
   margin: 0;
   text-align: center;
 }
+
+.input-selector {
+  margin: 0 auto;
+}

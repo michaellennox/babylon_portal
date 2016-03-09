@@ -37,4 +37,18 @@
       </md-list-item>
     </md-list>
   </md-card-content>
+
+  <md-divider></md-divider>
+
+  <md-card-content>
+    <h3 class="md-title">SELECT THE DOCTOR</h3>
+    <div md-input-container flex="30" class="input-selector">
+      <label>{{bookingForm.selectedMedic}}</label>
+      <md-select ng-model="bookingForm.selectedMedic" id="medicSelector">
+        <md-option ng-repeat="medic in bookingForm.medics" value="{{medic.name}}">
+          {{medic.name}}
+        </md-option>
+      </md-select>
+    </div>
+  </md-card-content>
 </md-card>
