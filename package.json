@@ -11,7 +11,7 @@
     "protractor": "protractor tests/e2e/conf.js",
     "api-tests": "mocha ",
     "postinstall": "bower install",
-    "wd-manager-start": "./node_modules/protractor/bin/webdriver-manager start",
+    "wd-manager-start": "npm run wd-manager-update && ./node_modules/protractor/bin/webdriver-manager start",
     "wd-manager-update": "./node_modules/protractor/bin/webdriver-manager update --standalone --chrome"
   },
   "repository": {
