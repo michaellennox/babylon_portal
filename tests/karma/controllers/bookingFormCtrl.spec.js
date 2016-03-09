@@ -55,12 +55,14 @@ describe('BookingFormCtrl', function() {
 
   describe('#setActiveService()', function() {
     it('sets the active service to number passed', function() {
-      ctrl.setActiveService(4);
-      expect(ctrl.activeService).toEqual(4);
+      $rootScope.$digest();
+      ctrl.setActiveService(1);
+      expect(ctrl.activeService).toEqual(1);
     });
 
     it('sets the active medic relevant to service', function() {
-      ctrl.setActiveService(4);
+      $rootScope.$digest();
+      ctrl.setActiveService(1);
       expect(ctrl.activeMedic.name).toEqual('A. Specialist');
     });
   });
