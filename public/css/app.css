@@ -59,3 +59,11 @@ md-card-content .md-title {
 .input-selector {
   margin: 0 auto;
 }
+
+md-card {
+  overflow: scroll;
+}
+
+md-card-actions {
+  margin-bottom: 16px !important;
+}

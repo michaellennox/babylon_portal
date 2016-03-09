@@ -22,6 +22,12 @@
   <script src="../js/factories/dataResourceFactory.js"></script>
 </head>
 <body>
+  <md-toolbar>
+    <div flex="70" flex-offset="15" layout="row" layout-align="start center">
+      <md-button ui-sref="home">Home</md-button>
+      <md-button ui-sref="book">Book a Consultation</md-button>
+    </div>
+  </md-toolbar>
   <ui-view flex="70" flex-offset="15" layout="column"></ui-view>
 </body>
 </html>
